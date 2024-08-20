@@ -9,7 +9,10 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     const todoNameElement = document.getElementById("todo-name");
     const element = document.createElement("li");
-    element.innerText = todoNameElement.value;
+    const textElement = document.createElement("span");
+    element.appendChild(textElement);
+    textElement.innerText = todoNameElement.value;
+    textElement.setAttribute('contenteditable', true);
     const removeButton = document.createElement("button");
     removeButton.innerText = 'X';
     element.appendChild(removeButton);
